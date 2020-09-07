@@ -80,3 +80,16 @@ There are in total 4 tasks specified in `dodo.py`, which can be checked using th
 * `get_image_name` - retrieve the current directory's name and use it plus the version number to create the name for the docker image. Used by both `buildimage` and `dockerrun`.
 * `mkdir` - creates the `data`, `src`, `notebooks` directories locally so they can be mounted to the container during `dockerrun`.
 * `notebook` - Opens the browser at [http://0.0.0.0:8888/lab](http://0.0.0.0:8888/lab). Depends on `dockerrun`.
+
+### Cleaning up
+After you are done with your development and quits the notebook, the notebook will still persist and the docker will continue running. This means you can always be able to access your notebook again at [http://0.0.0.0:8888/lab](http://0.0.0.0:8888/lab), as long as your container is running. To check if your contaienr is running, use
+
+```
+docker container ps
+```
+
+To stop the container for good, find the `CONTAINER ID` by doing the command above, then do 
+
+```
+docker stop [container id] 
+```
