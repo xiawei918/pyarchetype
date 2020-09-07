@@ -36,7 +36,9 @@ If docker is not installed, please install docker by following the instruction [
 
 ## Quick start
 To verify if doit is up and running, try
+
 ```doit list```
+
 which will return a list of tasks specified in the `dodo.py` file. An example output may look like the following
 ```
 buildimage       
@@ -49,6 +51,7 @@ notebook
 Now that prerequisites are installed, one can quickly spin up a Jupyter notebook by running the following command
 
 ```doit notebook```
+
 This will spin up a Jupyterlab on [http://0.0.0.0:8888/lab](http://0.0.0.0:8888/lab). The current directory is also mounted as a volume in the container's `project/` directory, which means any modifications you make to the notebook or any files added under the `project` directory within the docker container will be saved to your local machine.
 
 In the background, docker will pull a Python 3.8.0 base image and install poetry that will install and manage Python related dependencies. The initial python dependencies included are:
